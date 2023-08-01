@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import photo from '../../../assets/images/photo_demo.webp';
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {theme} from "../../../styles/Theme";
 
 export const Main = () => {
     return (
@@ -19,9 +20,8 @@ export const Main = () => {
     );
 };
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
   min-height: 100vh;
-  background-image: linear-gradient(45deg, pink, blue);
 `;
 
 const Photo = styled.img`
