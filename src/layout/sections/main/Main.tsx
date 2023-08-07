@@ -4,12 +4,13 @@ import photo from '../../../assets/images/photo_demo.webp';
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align='center' justify='space-between' wrap={'wrap'}>
+                <FlexWrapper align='center' justify='space-around' wrap={'wrap'}>
                     <div>
                         <SmallText>Hi There</SmallText>
                         <Name>I am <span>Vasily Medvedev</span></Name>
@@ -35,6 +36,7 @@ const Photo = styled.img`
   width: 350px;
   height: 430px;
   object-fit: cover;
+  margin-right: 20px;
   
   @media ${theme.media.mobile} {
     width: 310px;
@@ -43,20 +45,18 @@ const Photo = styled.img`
 `;
 
 const MainTitle = styled.h1`
-  font-size: 1.6875rem;  
-  font-weight: 400;
+  ${font({maxSize: 27, minSize: 20, weight: 400})};  
 `;
 
 const Name = styled.h2`
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 3.125rem;  
-  font-weight: 700;  
+  ${font({family: "'Josefin Sans', sans-serif", weight: 700, maxSize: 50, minSize: 36})};  
   letter-spacing: 0.15625rem;
   margin: 10px 0;  
   
   span {
     position: relative;
     z-index: 0;
+    white-space: nowrap;
     &::before {
       content: '';
       display: inline-block;
@@ -68,6 +68,10 @@ const Name = styled.h2`
       z-index: -1;
     }
   }
+  
+  @media ${theme.media.mobile} {
+    margin: 15px 0 22px;
+  }
 `;
 
 const SmallText = styled.span`
@@ -78,6 +82,7 @@ const SmallText = styled.span`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
+  margin-top: 65px;
   
   &::before {
     content: '';
@@ -93,6 +98,8 @@ const PhotoWrapper = styled.div`
     @media ${theme.media.mobile} {
       width: 314px;
       height: 414px;
+      top: -17px;
+      bottom: -20px;
     }
   }
 `;
