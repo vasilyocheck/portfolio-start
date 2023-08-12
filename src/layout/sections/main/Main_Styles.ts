@@ -21,7 +21,11 @@ const Photo = styled.img`
 `;
 
 const MainTitle = styled.h1`
-  ${font({maxSize: 27, minSize: 20, weight: 400})};  
+  ${font({maxSize: 27, minSize: 20, weight: 400})};
+  
+  p {
+    display: none;
+  }
 `;
 
 const Name = styled.h2`
