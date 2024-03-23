@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
 
                     {footerData.map((item, ind) => {
                         return (
-                            <a href={item.link} target='_blank'>
+                            <a href={item.link} target='_blank' rel='noreferrer'>
                                 <S.SocialItem>
                                     <S.SocialLink>
                                         <Icon width={item.width}
